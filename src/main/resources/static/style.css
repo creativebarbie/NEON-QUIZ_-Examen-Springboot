@@ -1,0 +1,1502 @@
+/* =====================================================
+   NEON QUIZ // FUTURISTIC INTERFACE
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   VARIABLES
+   ===================================================== */
+
+:root {
+    --black: #030303;
+    --dark: #080808;
+    --panel: #101010;
+    --panel-light: #181818;
+
+    --red: #ff1616;
+    --red-dark: #760000;
+    --red-soft: #ff4545;
+
+    --green: #00ff88;
+    --green-dark: #006b3c;
+
+    --white: #eeeeee;
+    --gray: #888888;
+    --gray-dark: #333333;
+}
+
+
+/* =====================================================
+   BODY
+   ===================================================== */
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(255, 0, 0, 0.09),
+            transparent 40%
+        ),
+        #030303;
+
+    color: var(--white);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   GRID DE FONDO
+   ===================================================== */
+
+.background-grid {
+    position: fixed;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 22, 22, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 22, 22, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 50px 50px;
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+/* =====================================================
+   SCANLINES
+   ===================================================== */
+
+.scanlines {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 3px,
+            rgba(255, 255, 255, 0.012) 4px
+        );
+
+    pointer-events: none;
+
+    z-index: 20;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.top-bar {
+    width: 100%;
+
+    padding: 22px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid rgba(255, 22, 22, 0.35);
+
+    background:
+        rgba(3, 3, 3, 0.9);
+
+    box-shadow:
+        0 0 30px rgba(255, 0, 0, 0.04);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =====================================================
+   LOGO
+   ===================================================== */
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.brand-symbol {
+    width: 44px;
+
+    height: 44px;
+
+    border: 2px solid var(--red);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: var(--red);
+
+    font-size: 20px;
+
+    box-shadow:
+        0 0 10px rgba(255, 22, 22, 0.5),
+        inset 0 0 12px rgba(255, 22, 22, 0.15);
+
+    animation:
+        pulse 2s infinite;
+}
+
+
+.brand h1 {
+    font-size: 25px;
+
+    letter-spacing: 6px;
+
+    color: white;
+
+    text-shadow:
+        0 0 8px rgba(255, 22, 22, 0.7);
+}
+
+
+.subtitle {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #777;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =====================================================
+   SYSTEM STATUS
+   ===================================================== */
+
+.system-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #999;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.status-light {
+    width: 7px;
+
+    height: 7px;
+
+    background: var(--red);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px var(--red),
+        0 0 18px var(--red);
+
+    animation:
+        blink 1.5s infinite;
+}
+
+
+/* =====================================================
+   MAIN
+   ===================================================== */
+
+.main-container {
+    width: min(950px, 92%);
+
+    margin: 55px auto;
+
+    flex: 1;
+}
+
+
+/* =====================================================
+   MACHINE HEADER
+   ===================================================== */
+
+.machine-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 12px;
+
+    padding: 0 5px;
+}
+
+
+.machine-label span {
+    display: block;
+
+    color: var(--red);
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    text-shadow:
+        0 0 8px rgba(255, 22, 22, 0.4);
+}
+
+
+.machine-label small {
+    color: #666;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+.machine-code {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.machine-code strong {
+    color: var(--red);
+
+    font-size: 11px;
+
+    text-shadow:
+        0 0 8px var(--red);
+}
+
+
+/* =====================================================
+   QUIZ / RESULT CARD
+   ===================================================== */
+
+.quiz-card,
+.result-card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28, 28, 28, 0.96),
+            rgba(7, 7, 7, 0.98)
+        );
+
+    border: 1px solid #292929;
+
+    padding: 42px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.8),
+        0 0 35px rgba(255, 0, 0, 0.04);
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   LÍNEA NEÓN SUPERIOR
+   ===================================================== */
+
+.quiz-card::before,
+.result-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--red),
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px var(--red);
+}
+
+
+/* =====================================================
+   ESQUINA DECORATIVA
+   ===================================================== */
+
+.quiz-card::after,
+.result-card::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 0;
+
+    width: 70px;
+
+    height: 70px;
+
+    border-right:
+        2px solid var(--red-dark);
+
+    border-bottom:
+        2px solid var(--red-dark);
+
+    opacity: 0.7;
+}
+
+
+/* =====================================================
+   QUIZ INFO
+   ===================================================== */
+
+.quiz-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+    color: #888;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+#puntuacion {
+    color: var(--red);
+
+    text-shadow:
+        0 0 8px rgba(255, 22, 22, 0.7);
+}
+
+
+/* =====================================================
+   PROGRESS
+   ===================================================== */
+
+.progress-container {
+    margin-bottom: 45px;
+}
+
+
+.progress-label {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+#progress-percent {
+    color: var(--red);
+
+    text-shadow:
+        0 0 8px rgba(255, 22, 22, 0.5);
+}
+
+
+.progress-bar {
+    width: 100%;
+
+    height: 3px;
+
+    background: #222;
+
+    overflow: hidden;
+}
+
+
+#progress-fill {
+    width: 0%;
+
+    height: 100%;
+
+    background: var(--red);
+
+    box-shadow:
+        0 0 10px var(--red),
+        0 0 20px rgba(255, 22, 22, 0.6);
+
+    transition:
+        width 0.5s ease;
+}
+
+
+/* =====================================================
+   QUESTION
+   ===================================================== */
+
+.question-area {
+    margin-bottom: 35px;
+}
+
+
+.question-number {
+    margin-bottom: 12px;
+
+    color: var(--red);
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    text-shadow:
+        0 0 8px rgba(255, 22, 22, 0.5);
+}
+
+
+#pregunta {
+    max-width: 800px;
+
+    font-size:
+        clamp(20px, 3vw, 30px);
+
+    line-height: 1.35;
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    color: #f1f1f1;
+}
+
+
+/* =====================================================
+   ENTRADA DE PREGUNTA
+   ===================================================== */
+
+.question-enter {
+    animation:
+        questionEnter 0.45s ease forwards;
+}
+
+
+@keyframes questionEnter {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(-15px);
+
+        filter:
+            blur(4px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+        filter:
+            blur(0);
+    }
+}
+
+
+/* =====================================================
+   OPCIONES
+   ===================================================== */
+
+.options-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+.opcion {
+    position: relative;
+
+    min-height: 65px;
+
+    padding: 18px 20px;
+
+    background: #0c0c0c;
+
+    border: 1px solid #292929;
+
+    color: #ddd;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        0.25s ease;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    animation:
+        optionEnter 0.4s ease forwards;
+}
+
+
+/* línea lateral */
+
+.opcion::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 3px;
+
+    height: 100%;
+
+    background: var(--red);
+
+    transform:
+        scaleY(0);
+
+    transition:
+        0.25s ease;
+}
+
+
+/* brillo que pasa */
+
+.opcion::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 50%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 22, 22, 0.08),
+            transparent
+        );
+
+    transition:
+        left 0.4s ease;
+
+    pointer-events: none;
+}
+
+
+/* hover */
+
+.opcion:hover {
+    background: #151515;
+
+    border-color: var(--red);
+
+    color: white;
+
+    transform:
+        translateX(4px);
+
+    box-shadow:
+        0 0 15px
+        rgba(255, 22, 22, 0.18);
+}
+
+
+.opcion:hover::before {
+    transform:
+        scaleY(1);
+}
+
+
+.opcion:hover::after {
+    left: 120%;
+}
+
+
+/* desactivado */
+
+.opcion:disabled {
+    cursor: default;
+}
+
+
+/* =====================================================
+   ANIMACIÓN OPCIONES
+   ===================================================== */
+
+@keyframes optionEnter {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   RESPUESTA SELECCIONADA
+   ===================================================== */
+
+.opcion.selected {
+    transform:
+        translateX(6px);
+}
+
+
+/* =====================================================
+   CORRECTA
+   ===================================================== */
+
+.opcion.correct {
+    border-color:
+        var(--green);
+
+    color:
+        var(--green);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 255, 136, 0.12),
+            rgba(0, 255, 136, 0.02)
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(0, 255, 136, 0.25),
+
+        inset 0 0 15px
+        rgba(0, 255, 136, 0.05);
+
+    animation:
+        correctAnswer 0.45s ease;
+}
+
+
+/* =====================================================
+   INCORRECTA
+   ===================================================== */
+
+.opcion.incorrect {
+    border-color:
+        var(--red);
+
+    color:
+        var(--red);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 22, 22, 0.15),
+            rgba(255, 22, 22, 0.02)
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(255, 22, 22, 0.35),
+
+        inset 0 0 15px
+        rgba(255, 22, 22, 0.05);
+
+    animation:
+        wrongAnswer 0.4s ease;
+}
+
+
+/* =====================================================
+   ANIMACIÓN CORRECTA
+   ===================================================== */
+
+@keyframes correctAnswer {
+
+    0% {
+        transform:
+            translateX(0);
+
+        opacity: 0.5;
+    }
+
+    50% {
+        transform:
+            translateX(10px);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateX(6px);
+
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   ANIMACIÓN INCORRECTA
+   ===================================================== */
+
+@keyframes wrongAnswer {
+
+    0%,
+    100% {
+        transform:
+            translateX(6px);
+    }
+
+    25% {
+        transform:
+            translateX(-5px);
+    }
+
+    75% {
+        transform:
+            translateX(8px);
+    }
+}
+
+
+/* =====================================================
+   MENSAJE
+   ===================================================== */
+
+.message {
+    min-height: 28px;
+
+    margin-top: 25px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: var(--red);
+
+    text-shadow:
+        0 0 8px
+        rgba(255, 22, 22, 0.5);
+}
+
+
+/* =====================================================
+   NEXT BUTTON
+   ===================================================== */
+
+.next-container {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 10px;
+}
+
+
+.next-button,
+.restart-button {
+    position: relative;
+
+    padding: 13px 22px;
+
+    background: transparent;
+
+    border: 1px solid var(--red);
+
+    color: var(--red);
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        0.25s ease;
+
+    box-shadow:
+        0 0 8px
+        rgba(255, 22, 22, 0.15);
+
+    overflow: hidden;
+}
+
+
+.next-button span {
+    margin-left: 10px;
+
+    font-size: 16px;
+}
+
+
+.next-button:hover,
+.restart-button:hover {
+    background: var(--red);
+
+    color: black;
+
+    box-shadow:
+        0 0 15px var(--red),
+        0 0 35px
+        rgba(255, 22, 22, 0.4);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =====================================================
+   TERMINAL FOOTER
+   ===================================================== */
+
+.terminal-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 35px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid #222;
+
+    color: #444;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   EQUALIZER
+   ===================================================== */
+
+.equalizer {
+    display: flex;
+
+    align-items: center;
+
+    gap: 3px;
+
+    height: 18px;
+}
+
+
+.equalizer i {
+    display: block;
+
+    width: 3px;
+
+    background: var(--red);
+
+    opacity: 0.6;
+
+    animation:
+        equalizer 0.8s
+        infinite alternate;
+}
+
+
+.equalizer i:nth-child(1) {
+    height: 6px;
+}
+
+
+.equalizer i:nth-child(2) {
+    height: 13px;
+
+    animation-delay:
+        0.1s;
+}
+
+
+.equalizer i:nth-child(3) {
+    height: 9px;
+
+    animation-delay:
+        0.2s;
+}
+
+
+.equalizer i:nth-child(4) {
+    height: 17px;
+
+    animation-delay:
+        0.3s;
+}
+
+
+.equalizer i:nth-child(5) {
+    height: 11px;
+
+    animation-delay:
+        0.4s;
+}
+
+
+.equalizer i:nth-child(6) {
+    height: 15px;
+
+    animation-delay:
+        0.5s;
+}
+
+
+.equalizer i:nth-child(7) {
+    height: 7px;
+
+    animation-delay:
+        0.6s;
+}
+
+
+.equalizer i:nth-child(8) {
+    height: 12px;
+
+    animation-delay:
+        0.7s;
+}
+
+
+/* =====================================================
+   RESULTADO
+   ===================================================== */
+
+.result-card {
+    text-align: center;
+
+    padding:
+        65px 40px;
+}
+
+
+.result-icon {
+    width: 70px;
+
+    height: 70px;
+
+    margin:
+        0 auto 25px;
+
+    border:
+        2px solid var(--red);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--red);
+
+    font-size: 30px;
+
+    box-shadow:
+        0 0 20px
+        rgba(255, 22, 22, 0.5);
+
+    animation:
+        pulse 2s infinite;
+}
+
+
+.result-system {
+    color: var(--red);
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 10px;
+}
+
+
+.result-card h2 {
+    font-size: 28px;
+
+    letter-spacing: 6px;
+
+    margin-bottom: 20px;
+}
+
+
+.result-line {
+    width: 100px;
+
+    height: 1px;
+
+    margin:
+        0 auto 25px;
+
+    background:
+        var(--red);
+
+    box-shadow:
+        0 0 10px var(--red);
+}
+
+
+#resultado-final {
+    color: #aaa;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   FINAL SCORE
+   ===================================================== */
+
+.final-status {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 35px;
+}
+
+
+.final-status span {
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+
+.final-status strong {
+    color: var(--red);
+
+    font-size: 50px;
+
+    line-height: 1;
+
+    text-shadow:
+        0 0 15px
+        rgba(255, 22, 22, 0.7);
+
+    animation:
+        scoreAppear 0.7s ease;
+}
+
+
+/* =====================================================
+   RESULT LEVEL
+   ===================================================== */
+
+.result-card[data-level="LEGENDARY"]
+.final-status strong {
+    color: #ffd700;
+
+    text-shadow:
+        0 0 15px
+        rgba(255, 215, 0, 0.7);
+}
+
+
+.result-card[data-level="MASTER"]
+.final-status strong {
+    color: var(--green);
+
+    text-shadow:
+        0 0 15px
+        rgba(0, 255, 136, 0.6);
+}
+
+
+.result-card[data-level="RUNNER"]
+.final-status strong {
+    color: #ff8c00;
+
+    text-shadow:
+        0 0 15px
+        rgba(255, 140, 0, 0.6);
+}
+
+
+/* =====================================================
+   RESULT FOOTER
+   ===================================================== */
+
+.result-footer {
+    margin-top: 30px;
+
+    color: #444;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   ANIMACIÓN SCORE
+   ===================================================== */
+
+@keyframes scoreAppear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(0.7);
+
+        filter:
+            blur(8px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.site-footer {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 20px;
+
+    color: #444;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   ANIMACIONES GENERALES
+   ===================================================== */
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 8px
+            rgba(255, 22, 22, 0.4);
+    }
+
+    50% {
+        box-shadow:
+            0 0 20px
+            rgba(255, 22, 22, 0.8);
+    }
+}
+
+
+@keyframes blink {
+
+    0%,
+    45% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0.3;
+    }
+}
+
+
+@keyframes equalizer {
+
+    from {
+        transform:
+            scaleY(0.5);
+    }
+
+    to {
+        transform:
+            scaleY(1.2);
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .top-bar {
+        padding:
+            18px 5%;
+    }
+
+
+    .system-status {
+        display: none;
+    }
+
+
+    .brand h1 {
+        font-size: 19px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .subtitle {
+        font-size: 7px;
+    }
+
+
+    .main-container {
+        width: 94%;
+
+        margin:
+            30px auto;
+    }
+
+
+    .quiz-card,
+    .result-card {
+        padding:
+            25px 20px;
+    }
+
+
+    .options-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    #pregunta {
+        font-size: 21px;
+    }
+
+
+    .machine-header {
+        margin-bottom: 8px;
+    }
+
+
+    .terminal-footer {
+        display: none;
+    }
+
+
+    .site-footer {
+        text-align: center;
+
+        font-size: 7px;
+
+        flex-wrap: wrap;
+    }
+}
+
+/* =====================================================
+   ACCESSIBILITY // TEXT SIZE BOOST +15%
+   ===================================================== */
+
+/* Header */
+
+.system-status {
+    font-size: 11.5px;
+}
+
+.subtitle {
+    font-size: 10.5px;
+}
+
+.machine-label span {
+    font-size: 12.5px;
+}
+
+.machine-label small {
+    font-size: 9px;
+}
+
+.machine-code {
+    font-size: 10.5px;
+}
+
+.machine-code strong {
+    font-size: 12.5px;
+}
+
+
+/* Información del quiz */
+
+.quiz-info {
+    font-size: 11.5px;
+}
+
+.progress-label {
+    font-size: 9px;
+}
+
+.question-number {
+    font-size: 10.5px;
+}
+
+
+/* Mensaje de respuesta */
+
+.message {
+    font-size: 13.5px;
+}
+
+
+/* Botones */
+
+.next-button,
+.restart-button {
+    font-size: 11.5px;
+}
+
+
+/* Footer de la tarjeta */
+
+.terminal-footer {
+    font-size: 8px;
+}
+
+
+/* Footer general */
+
+.site-footer {
+    font-size: 9px;
+}
+
+
+/* Resultado */
+
+.result-system {
+    font-size: 20.5px;
+}
+
+.final-status span {
+    font-size: 10px;
+}
+
+.result-footer {
+    font-size: 9px;
+}

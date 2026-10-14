@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEON QUIZ // SYSTEM</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- EFECTO DE FONDO -->
+    <div class="background-grid"></div>
+    <div class="scanlines"></div>
+
+    <!-- HEADER -->
+    <header class="top-bar">
+
+        <div class="brand">
+            <span class="brand-symbol">◉</span>
+
+            <div>
+                <h1>NEON QUIZ</h1>
+                <span class="subtitle">PROGRAMMING // CODE // TECHNOLOGY</span>
+            </div>
+        </div>
+
+        <div class="system-status">
+            <span class="status-light"></span>
+            <span>SYSTEM ONLINE</span>
+        </div>
+
+    </header>
+
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main class="main-container">
+
+        <!-- CABECERA DE LA MÁQUINA -->
+        <section class="machine-header">
+
+            <div class="machine-label">
+                <span>NEON QUIZ</span>
+                <small>KNOWLEDGE PROTOCOL</small>
+            </div>
+
+            <div class="machine-code">
+                <span>API</span>
+                <strong>200</strong>
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ -->
+        <section id="quiz" class="quiz-card">
+
+            <!-- INFORMACIÓN SUPERIOR -->
+            <div class="quiz-info">
+
+                <div id="contador">
+                    Pregunta 1 de 50
+                </div>
+
+                <div id="puntuacion">
+                    Puntos: 0
+                </div>
+
+            </div>
+
+
+            <!-- BARRA DE PROGRESO -->
+            <div class="progress-container">
+
+                <div class="progress-label">
+                    <span>PROGRESS</span>
+                    <span id="progress-percent">00%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div id="progress-fill"></div>
+                </div>
+
+            </div>
+
+
+            <!-- PREGUNTA -->
+            <div class="question-area">
+
+                <div class="question-number">
+                    QUESTION
+                </div>
+
+                <h2 id="pregunta">
+                    Cargando pregunta...
+                </h2>
+
+            </div>
+
+
+            <!-- OPCIONES -->
+            <div id="opciones" class="options-grid">
+                <!-- JavaScript genera aquí las respuestas -->
+            </div>
+
+
+            <!-- MENSAJE -->
+            <div id="mensaje" class="message"></div>
+
+
+            <!-- BOTÓN SIGUIENTE -->
+            <div class="next-container">
+
+                <button id="siguiente" class="next-button" hidden>
+                    NEXT QUESTION
+                    <span>→</span>
+                </button>
+
+            </div>
+
+
+            <!-- DECORACIÓN -->
+            <div class="terminal-footer">
+
+                <span>DATA LINK: ACTIVE</span>
+
+                <div class="equalizer">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+
+                <span>ENCRYPTED</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTADO FINAL -->
+        <section id="resultado" class="result-card" hidden>
+
+            <div class="result-icon">
+                ◉
+            </div>
+
+            <p class="result-system">
+                SYSTEM COMPLETE
+            </p>
+
+            <h2>QUIZ FINISHED</h2>
+
+            <div class="result-line"></div>
+
+            <p id="resultado-final">
+                Has conseguido 0 puntos de 50.
+            </p>
+
+            <div class="final-status">
+
+                <span>FINAL SCORE</span>
+
+                <strong id="final-score">
+                    --
+                </strong>
+
+            </div>
+
+            <button id="reiniciar" class="restart-button">
+                RUN QUIZ AGAIN
+            </button>
+
+            <div class="result-footer">
+                DATABASE RECORD SAVED
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <span>NEON QUIZ SYSTEM</span>
+
+        <span>•</span>
+
+        <span>SPRING BOOT // MYSQL // JAVASCRIPT</span>
+
+    </footer>
+
+</body>
+
+</html>
